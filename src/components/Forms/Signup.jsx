@@ -23,7 +23,7 @@ const Signup = () => {
     try{
     const data=await createUser(name.current.value,emailElement.current.value,password.current.value,mobileno.current.value)
     dispatch(userAction.setUserState(data.email))
-    navigate('/login')
+    navigate('/')
     }
     catch(error){
     setError(error.message)
