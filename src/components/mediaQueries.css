@@ -84,6 +84,7 @@
 
   .product-checkout-container{
    width: 300px;
+   overflow: hidden;
   }
   .product-checkout-container img{
     width: 100px;
