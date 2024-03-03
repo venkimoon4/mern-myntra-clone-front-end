@@ -2,9 +2,9 @@ import { CiUser, CiHeart } from "react-icons/ci";
 import { FaBagShopping } from "react-icons/fa6";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, NavLink, useNavigate } from "react-router-dom";
-import { IoMdLogOut } from "react-icons/io";
 import { userAction } from "../store/userSlice";
 import { bagActions } from "../store/bagSlice";
+import Navbar from "./Navbar/Navbar";
 
 const Header = () => {
   
@@ -46,7 +46,7 @@ const Header = () => {
             </Link>
           </div>
 
-          <div>
+          <div className="nav-options" >
             <NavLink
               to="men"
               style={(obj) => {
@@ -57,7 +57,7 @@ const Header = () => {
             </NavLink>
           </div>
 
-          <div>
+          <div className="nav-options" >
             <NavLink
               to="woman"
               style={(obj) => {
@@ -68,7 +68,7 @@ const Header = () => {
             </NavLink>
           </div>
 
-          <div>
+          <div className="nav-options" >
             <NavLink
               to="kids"
               style={(obj) => {
@@ -78,7 +78,7 @@ const Header = () => {
               KIDS
             </NavLink>
           </div>
-          <div>
+          <div className="nav-options" >
             <NavLink
               to="homeandliving"
               style={(obj) => {
@@ -87,8 +87,8 @@ const Header = () => {
             >
               HOME & LIVING
             </NavLink>
-          </div>
-          <div>
+          </div >
+          <div className="nav-options">
             <NavLink
               to="beauty"
               style={(obj) => {
@@ -114,6 +114,41 @@ const Header = () => {
             <span className="material-symbols-outlined">search</span>
           </button>
           <input placeholder="Search for products , brand and more"></input>
+        </div>
+
+        <div className="nav-section">
+          <Navbar/>
+
+          <div className="wish-icon-container">
+            <NavLink 
+              to="/wish-list"
+              style={(obj) => {
+                return handleActive(obj);
+              }}
+            >
+              <CiHeart className="icon" />
+              <p>Wishlist</p>
+              {wishlist.length !== 0 && (
+                <div className="wish-count">{wishlist.length}</div>
+              )}
+            </NavLink>
+          </div>
+
+          <div className="bag-icon-container">
+            <NavLink
+              to="/bag"
+              style={(obj) => {
+                return handleActive(obj);
+              }}
+            >
+              <FaBagShopping className="icon" />
+              <p>Bag</p>
+              {bag.length !== 0 && (
+                <div className="bag-count">{bag.length}</div>
+              )}
+            </NavLink>
+          </div>
+
         </div>
 
         <div className="right-section">
@@ -181,6 +216,7 @@ const Header = () => {
               )}
             </NavLink>
           </div>
+
         </div>
       </header>
     </>

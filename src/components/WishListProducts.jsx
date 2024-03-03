@@ -44,7 +44,7 @@ const WishListProducts=()=>{
     <>
     <div className='wish-products'>
       
-    {wishlist.length===0 && <div style={{display:"flex",flexDirection:"column",alignItems:"center", height:"500px", justifyContent:"space-evenly",margin:"40px ,0px"}}><h1 style={{fontSize:"1.5rem"}}>Your WishList Is Empty ❤️</h1>
+    {wishlist.length===0 && <div className="empty" style={{display:"flex",flexDirection:"column",alignItems:"center", height:"500px", justifyContent:"space-evenly",margin:"40px ,0px"}}><h1 style={{fontSize:"1.5rem"}}>Your WishList Is Empty ❤️</h1>
     <img src="./images/wish-list-empty.gif"/>
      <h2 style={{color:"green",fontSize:"1.5rem"}}>Please Add You Favorite Products In WishList 🖤</h2></div>}
 
