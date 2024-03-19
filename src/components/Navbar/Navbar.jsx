@@ -17,7 +17,7 @@ function Navbar() {
       localStorage.removeItem("email");
       localStorage.removeItem("token");
       dispatch(userAction.setUserState(null));
-      dispatch(bagActions.clearCart())
+      dispatch(bagActions.clearProductsFromBag())
       navigate("/login");
     }
   };
